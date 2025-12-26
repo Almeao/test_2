@@ -1057,54 +1057,22 @@ gsap.from(".page5 h3",
   
 
 
+  // Consolidated and corrected: use 'touchstart', not 'ontouchstart'; stop propagation to avoid duplicate triggers; DRY code.
 
-  const page5Card1 = document.querySelector('.page5_card1');
-
-  if (page5Card1) {
-    page5Card1.addEventListener('click', function () {
-      window.open('https://www.youtube.com/watch?v=ogoqufsAIJA', '_blank');
-    });
-    page5Card1.addEventListener('ontouchstart', function () {
-      window.open('https://www.youtube.com/watch?v=ogoqufsAIJA', '_blank');
-    });
-    // Add cursor pointer to indicate it's clickable
-    page5Card1.style.cursor = 'pointer';
-  }
-  
-  const page5Card2 = document.querySelector('.page5_card2');
-
-  if (page5Card2) {
-    // Use both click and touchstart for best compatibility
-    function openYouTubeVideo() {
-      window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
+function addYouTubeCardHandler(selector, url) {
+  const card = document.querySelector(selector);
+  if (card) {
+    // Handler for click/touch events
+    function openVideo(e) {
+      e.stopPropagation();
+      window.open(url, '_blank');
     }
-    page5Card2.addEventListener('click', openYouTubeVideo);
-    page5Card2.addEventListener('touchstart', openYouTubeVideo);
-
-    // Add cursor pointer to indicate it's clickable
-    page5Card2.style.cursor = 'pointer';
+    card.addEventListener('click', openVideo, false);
+    card.addEventListener('touchstart', openVideo, false);
+    card.style.cursor = 'pointer';
   }
+}
 
-
-
-
-
-
-
-
-
-  
-  const page5Card3 = document.querySelector('.page5_card3');
-  
-  if (page5Card3) {
-    page5Card3.addEventListener('click', function () {
-      window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
-    });
-    page5Card3.addEventListener('ontouchstart', function () {
-      window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
-    });
-    // Add cursor pointer to indicate it's clickable
-    page5Card3.style.cursor = 'pointer';
-  }
-  
-
+addYouTubeCardHandler('.page5_card1', 'https://www.youtube.com/watch?v=ogoqufsAIJA');
+addYouTubeCardHandler('.page5_card2', 'https://www.youtube.com/watch?v=L7zVNHXjF1c');
+addYouTubeCardHandler('.page5_card3', 'https://www.youtube.com/watch?v=9BSsIOb1YHg');

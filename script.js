@@ -1063,29 +1063,35 @@ if (page5Card1) {
   page5Card1.style.cursor = 'pointer';
 }
 
+const page5Card2 = document.querySelector('.page5_card2');
 
-// Helper function to handle clicks with touch support for Page 5 cards
-function addTouchClickListeners(selector, url) {
-  const elements = document.querySelectorAll(selector);
-  elements.forEach(element => {
-    function handleClick(e) {
-      e.preventDefault(); // Prevents ghost clicks on touch devices
-      window.open(url, '_blank');
-    }
-    // Remove existing listeners to avoid duplicates if re-running
-    element.removeEventListener('click', handleClick);
-    element.removeEventListener('touchstart', handleClick);
-
-    element.addEventListener('click', handleClick);
-    element.addEventListener('touchstart', handleClick);
-
-    // Add cursor pointer
-    element.style.cursor = 'pointer';
+if (page5Card2) {
+  page5Card1.addEventListener('click', function () {
+    window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
   });
+  page5Card1.addEventListener('ontouchstart', function () {
+    window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
+  });
+  // Add cursor pointer to indicate it's clickable
+  page5Card2.style.cursor = 'pointer';
 }
 
+const page5Card3 = document.querySelector('.page5_card3');
+
+if (page5Card3) {
+  page5Card1.addEventListener('click', function () {
+    window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
+  });
+  page5Card1.addEventListener('ontouchstart', function () {
+    window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
+  });
+  // Add cursor pointer to indicate it's clickable
+  page5Card3.style.cursor = 'pointer';
+}
+
+
 // Initialize listeners for Page 5 cards
-addTouchClickListeners('.page5_card1', 'https://www.youtube.com/watch?v=ogoqufsAIJA');
-addTouchClickListeners('.page5_card2', 'https://www.youtube.com/watch?v=L7zVNHXjF1c');
-addTouchClickListeners('.page5_card3', 'https://www.youtube.com/watch?v=9BSsIOb1YHg');
+// addTouchClickListeners('.page5_card1', 'https://www.youtube.com/watch?v=ogoqufsAIJA');
+// addTouchClickListeners('.page5_card2', 'https://www.youtube.com/watch?v=L7zVNHXjF1c');
+// addTouchClickListeners('.page5_card3', 'https://www.youtube.com/watch?v=9BSsIOb1YHg');
 

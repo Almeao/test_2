@@ -1066,10 +1066,10 @@ if (page5Card1) {
 const page5Card2 = document.querySelector('.page5_card2');
 
 if (page5Card2) {
-  page5Card1.addEventListener('click', function () {
+  page5Card2.addEventListener('click', function () {
     window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
   });
-  page5Card1.addEventListener('ontouchstart', function () {
+  page5Card2.addEventListener('ontouchstart', function () {
     window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
   });
   // Add cursor pointer to indicate it's clickable
@@ -1079,10 +1079,10 @@ if (page5Card2) {
 const page5Card3 = document.querySelector('.page5_card3');
 
 if (page5Card3) {
-  page5Card1.addEventListener('click', function () {
+  page5Card3.addEventListener('click', function () {
     window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
   });
-  page5Card1.addEventListener('ontouchstart', function () {
+  page5Card3.addEventListener('ontouchstart', function () {
     window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
   });
   // Add cursor pointer to indicate it's clickable

@@ -1048,50 +1048,63 @@ gsap.from(".page5 h3",
 
   })
 
-// Open a new link when page5_card1 is clicked
-// Helper function to handle clicks with touch support
-const page5Card1 = document.querySelector('.page5_card1');
-
-if (page5Card1) {
-  page5Card1.addEventListener('click', function () {
-    window.open('https://www.youtube.com/watch?v=ogoqufsAIJA', '_blank');
-  });
-  page5Card1.addEventListener('ontouchstart', function () {
-    window.open('https://www.youtube.com/watch?v=ogoqufsAIJA', '_blank');
-  });
-  // Add cursor pointer to indicate it's clickable
-  page5Card1.style.cursor = 'pointer';
-}
-
-const page5Card2 = document.querySelector('.page5_card2');
-
-if (page5Card2) {
-  page5Card2.addEventListener('click', function () {
-    window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
-  });
-  page5Card2.addEventListener('ontouchstart', function () {
-    window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
-  });
-  // Add cursor pointer to indicate it's clickable
-  page5Card2.style.cursor = 'pointer';
-}
-
-const page5Card3 = document.querySelector('.page5_card3');
-
-if (page5Card3) {
-  page5Card3.addEventListener('click', function () {
-    window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
-  });
-  page5Card3.addEventListener('ontouchstart', function () {
-    window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
-  });
-  // Add cursor pointer to indicate it's clickable
-  page5Card3.style.cursor = 'pointer';
-}
 
 
-// Initialize listeners for Page 5 cards
-// addTouchClickListeners('.page5_card1', 'https://www.youtube.com/watch?v=ogoqufsAIJA');
-// addTouchClickListeners('.page5_card2', 'https://www.youtube.com/watch?v=L7zVNHXjF1c');
-// addTouchClickListeners('.page5_card3', 'https://www.youtube.com/watch?v=9BSsIOb1YHg');
+
+
+
+
+  
+
+
+
+  const page5Card1 = document.querySelector('.page5_card1');
+
+  if (page5Card1) {
+    page5Card1.addEventListener('click', function () {
+      window.open('https://www.youtube.com/watch?v=ogoqufsAIJA', '_blank');
+    });
+    page5Card1.addEventListener('ontouchstart', function () {
+      window.open('https://www.youtube.com/watch?v=ogoqufsAIJA', '_blank');
+    });
+    // Add cursor pointer to indicate it's clickable
+    page5Card1.style.cursor = 'pointer';
+  }
+  
+  const page5Card2 = document.querySelector('.page5_card2');
+
+  if (page5Card2) {
+    // Use both click and touchstart for best compatibility
+    function openYouTubeVideo() {
+      window.open('https://www.youtube.com/watch?v=L7zVNHXjF1c', '_blank');
+    }
+    page5Card2.addEventListener('click', openYouTubeVideo);
+    page5Card2.addEventListener('touchstart', openYouTubeVideo);
+
+    // Add cursor pointer to indicate it's clickable
+    page5Card2.style.cursor = 'pointer';
+  }
+
+
+
+
+
+
+
+
+
+  
+  const page5Card3 = document.querySelector('.page5_card3');
+  
+  if (page5Card3) {
+    page5Card3.addEventListener('click', function () {
+      window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
+    });
+    page5Card3.addEventListener('ontouchstart', function () {
+      window.open('https://www.youtube.com/watch?v=9BSsIOb1YHg', '_blank');
+    });
+    // Add cursor pointer to indicate it's clickable
+    page5Card3.style.cursor = 'pointer';
+  }
+  
 
